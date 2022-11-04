@@ -17,7 +17,6 @@ public class EatGoal : MonoBehaviour
     {
         if(collision.gameObject.tag == "player")
         {
-
             if (WTPoints.dimension)
             {
                 WTPoints.pointsSpaceTwo++;

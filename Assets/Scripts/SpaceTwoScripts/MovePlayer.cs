@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Timers;
 
 public class MovePlayer : MonoBehaviour
 {
     public float speedPlayer;
+
     public AudioSource musicGoal;
 
     private bool isMoveUp = false;
@@ -41,12 +41,7 @@ public class MovePlayer : MonoBehaviour
         delay = 0;
     }
 
-    private void SwitchedDirection()
-    {
-        isMoveUp = !isMoveUp;
-    }
-
-
+    private void SwitchedDirection() => isMoveUp = !isMoveUp;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -70,10 +65,9 @@ public class MovePlayer : MonoBehaviour
         else if (collision.gameObject.tag == "SpaceTwo" || collision.gameObject.tag == "SpaceOne")
         {
             SwitchedDirection();
-            delay = 0.05f;
+            delay = 0.06f;
         }
             
-
         if (collision.gameObject.tag == "goal")
             musicGoal.Play();
     }

@@ -25,7 +25,6 @@ public class EnterPortal : MonoBehaviour
                 StartProcess.cloneSpaceOne = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
                 WTPoints.space = GameObject.Find("spaceOne");
-                WTPoints.render = WTPoints.space.GetComponent<SpriteRenderer>();
             }
             else if(gameObject.tag == "portalSpaceOne")
             {
@@ -40,8 +39,9 @@ public class EnterPortal : MonoBehaviour
                 StartProcess.cloneSpaceTwo = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
                 WTPoints.space = GameObject.Find("spaceTwo");
-                WTPoints.render = WTPoints.space.GetComponent<SpriteRenderer>();
             }
+
+            WTPoints.render = WTPoints.space.GetComponent<SpriteRenderer>();
         }
     }
 

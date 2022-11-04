@@ -52,8 +52,10 @@ public static class WTPoints
 {
     public static int hiScore = PlayerPrefs.GetInt("HiScore");
     public static int score;
+
     public static int pointsSpaceTwo;
     public static int pointsSpaceOne;
+
     public static bool dimension;
 
     public static GameObject space;

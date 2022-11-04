@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BottonPlayAnimation : MonoBehaviour
 {
-    public SpriteRenderer triangleRenderer = null;
+    public SpriteRenderer triangleRender = null;
     public Text title;
     public int nextScene;
 
     private void Start()
     {
-        if(triangleRenderer == null)
+        if(triangleRender == null)
            title.text = PlayerPrefs.GetInt("Score").ToString();
     }
 
@@ -24,8 +24,8 @@ public class BottonPlayAnimation : MonoBehaviour
         
         AlphaChannel.RegulateText(title, 0.7f);
 
-        if (triangleRenderer != null)
-            AlphaChannel.RegulateSprite(triangleRenderer, 0.7f);
+        if (triangleRender != null)
+            AlphaChannel.RegulateSprite(triangleRender, 0.7f);
     }
 
     public void OnClickPlay() => SceneManager.LoadScene(nextScene);

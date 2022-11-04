@@ -1029,6 +1029,10 @@ PrefabInstance:
       propertyPath: musicGoal
       value: 
       objectReference: {fileID: 507086637}
+    - target: {fileID: 548817391122302679, guid: 35a4511bb17fea9408932586a8092332, type: 3}
+      propertyPath: speedPlayer
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 548817391122302682, guid: 35a4511bb17fea9408932586a8092332, type: 3}
       propertyPath: m_Name
       value: Player

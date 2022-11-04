@@ -5,7 +5,7 @@ public class HiScore : MonoBehaviour
 {
     public Text hiScoreText;
 
-    private int total;
+    private int countingClicks;
 
     void Start()
     {
@@ -16,12 +16,12 @@ public class HiScore : MonoBehaviour
 
     public void OnClickFiveTimes()
     {
-        if(total == 5)
+        if(countingClicks == 5)
         {
-            total = 0;
-            PlayerPrefs.SetInt("HiScore", total);
-            hiScoreText.text = total.ToString();
+            countingClicks = 0;
+            PlayerPrefs.SetInt("HiScore", countingClicks);
+            hiScoreText.text = countingClicks.ToString();
         }
-        total++;
+        countingClicks++;
     }
 }
