@@ -41,6 +41,12 @@ public class MovePlayer : MonoBehaviour
         delay = 0;
     }
 
+    private void OnTriggerExit2D()
+    {
+        SwitchedDirection();
+        delay = 0.06f;
+    }
+
     private void SwitchedDirection() => isMoveUp = !isMoveUp;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -61,11 +67,6 @@ public class MovePlayer : MonoBehaviour
 
             PlayerPrefs.SetInt("Score", 0);
             SceneManager.LoadScene(2);
-        }
-        else if (collision.gameObject.tag == "SpaceTwo" || collision.gameObject.tag == "SpaceOne")
-        {
-            SwitchedDirection();
-            delay = 0.06f;
         }
             
         if (collision.gameObject.tag == "goal")

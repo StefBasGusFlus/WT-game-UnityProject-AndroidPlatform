@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e81a8956817654883b709d7fcc2d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triangleRenderer: {fileID: 197369155}
+  triangleRender: {fileID: 197369155}
   title: {fileID: 1312695983}
   nextScene: 1
 --- !u!212 &719336193
