@@ -11,9 +11,13 @@ public class StartProcess : MonoBehaviour
     private void Start()
     {
         WTPoints.score = default(int);
+        WTPoints.hiScore = PlayerPrefs.GetInt("HiScore");
+
         WTPoints.dimension = true;
+
         WTPoints.pointsSpaceTwo = default(int);
         WTPoints.pointsSpaceOne = default(int);
+        
 
         cloneSpaceTwo = Instantiate(spaceProcess, Vector3.zero, Quaternion.identity);
 
@@ -50,7 +54,7 @@ public class AlphaChannel
 
 public static class WTPoints
 {
-    public static int hiScore = PlayerPrefs.GetInt("HiScore");
+    public static int hiScore;
     public static int score;
 
     public static int pointsSpaceTwo;
