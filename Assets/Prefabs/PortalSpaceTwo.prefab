@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8387588198042995689}
   - component: {fileID: 8745671129968251501}
-  - component: {fileID: 6693249389770698789}
   - component: {fileID: 7360776161243099808}
   - component: {fileID: 283829873187829}
+  - component: {fileID: 8883603307518063994}
   m_Layer: 0
   m_Name: PortalSpaceTwo
   m_TagString: portalSpaceOne
@@ -85,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6693249389770698789
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614016324614578810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.82, y: 0.88}
-    newSize: {x: 0.82, y: 0.88}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
 --- !u!50 &7360776161243099808
 Rigidbody2D:
   serializedVersion: 4
@@ -145,3 +119,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnterIn: {fileID: 300416513328584700, guid: 1709f74f695bf904aae918a684dcb5b8, type: 3}
+--- !u!58 &8883603307518063994
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614016324614578810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.003314972}
+  serializedVersion: 2
+  m_Radius: 0.30077744

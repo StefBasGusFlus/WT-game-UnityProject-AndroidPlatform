@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BottonPlayAnimation : MonoBehaviour
 {
-    public SpriteRenderer triangleRender = null;
-    public Text title;
-    public int nextScene;
+    [SerializeField] private SpriteRenderer triangleRender = null;
+    [SerializeField] private Text title;
+    [SerializeField] private int nextScene;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class BottonPlayAnimation : MonoBehaviour
     {
         if (transform.localScale.x < 2.5f)
         {
-            transform.localScale += new Vector3(2, 2, 0) * Time.deltaTime;
+            transform.localScale += new Vector3(3, 3, 0) * Time.deltaTime;
             return;
         }
         

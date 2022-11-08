@@ -3,17 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class MovePlayer : MonoBehaviour
 {
-    public float speedPlayer;
+    [SerializeField] private float speedPlayer;
 
-    public AudioSource musicGoal;
+    [SerializeField] private AudioSource musicGoal;
 
     private bool isMoveUp = false;
 
-    private float delay = 0;
+    private float delay = 0.06f;
 
     private void FixedUpdate()
     {
-        if(WTPoints.dimension)
+        if(DataPoints.dimension)
             ActionInSpaceTwo();
         else
             ActionInSpaceOne();    
@@ -53,14 +53,14 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "barrier")
         {
-            if (WTPoints.pointsSpaceOne == WTPoints.pointsSpaceTwo)
+            if (DataPoints.pointsSpaceOne == DataPoints.pointsSpaceTwo)
             {
-                WTPoints.score = WTPoints.pointsSpaceTwo;
+                DataPoints.score = DataPoints.pointsSpaceTwo;
 
-                if(WTPoints.score > WTPoints.hiScore)
-                    PlayerPrefs.SetInt("HiScore", WTPoints.score);
+                if(DataPoints.score > DataPoints.hiScore)
+                    PlayerPrefs.SetInt("HiScore", DataPoints.score);
 
-                PlayerPrefs.SetInt("Score", WTPoints.score);
+                PlayerPrefs.SetInt("Score", DataPoints.score);
                 SceneManager.LoadScene(3);
                 return;
             }

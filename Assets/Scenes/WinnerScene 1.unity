@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e81a8956817654883b709d7fcc2d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triangleRenderer: {fileID: 0}
+  triangleRender: {fileID: 0}
   title: {fileID: 1312695983}
   nextScene: 1
 --- !u!212 &719336193
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3647059, g: 0.50980395, b: 0.8117648, a: 1}
+  m_Color: {r: 0.80392164, g: 0.5803922, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

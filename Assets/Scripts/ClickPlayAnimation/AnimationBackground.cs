@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AnimationBackground : MonoBehaviour
 {
-    public GameObject elementBackground;
+    [SerializeField] private GameObject elementBackground;
 
     private Bounds areaSpawn;
 

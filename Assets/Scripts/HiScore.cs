@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HiScore : MonoBehaviour
 {
-    public Text hiScoreText;
+    [SerializeField] private Text hiScoreText;
 
     private int countingClicks;
 

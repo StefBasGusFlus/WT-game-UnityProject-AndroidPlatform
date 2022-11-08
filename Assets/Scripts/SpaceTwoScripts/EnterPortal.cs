@@ -3,18 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class EnterPortal : MonoBehaviour
 {
-    public GameObject EnterIn;
+    [SerializeField] private GameObject EnterIn;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.tag == "player")
         {
-            WTPoints.dimension = !WTPoints.dimension;
+            DataPoints.dimension = !DataPoints.dimension;
 
             if (gameObject.tag == "portalSpaceTwo")
             {
-                if (WTPoints.pointsSpaceTwo < WTPoints.pointsSpaceOne)
+                if (DataPoints.pointsSpaceTwo < DataPoints.pointsSpaceOne)
                 {
                     LoadLoserScene();
                     return;
@@ -24,11 +24,11 @@ public class EnterPortal : MonoBehaviour
 
                 StartProcess.cloneSpaceOne = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
-                WTPoints.space = GameObject.Find("spaceOne");
+                DataPoints.space = GameObject.Find("spaceOne");
             }
             else if(gameObject.tag == "portalSpaceOne")
             {
-                if (WTPoints.pointsSpaceTwo > WTPoints.pointsSpaceOne)
+                if (DataPoints.pointsSpaceTwo > DataPoints.pointsSpaceOne)
                 {
                     LoadLoserScene();
                     return;
@@ -38,10 +38,10 @@ public class EnterPortal : MonoBehaviour
 
                 StartProcess.cloneSpaceTwo = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
-                WTPoints.space = GameObject.Find("spaceTwo");
+                DataPoints.space = GameObject.Find("spaceTwo");
             }
 
-            WTPoints.render = WTPoints.space.GetComponent<SpriteRenderer>();
+            DataPoints.render = DataPoints.space.GetComponent<SpriteRenderer>();
         }
     }
 

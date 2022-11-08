@@ -3,29 +3,29 @@ using UnityEngine.UI;
 
 public class StartProcess : MonoBehaviour
 {
-    public GameObject spaceProcess;
+    [SerializeField] private GameObject spaceProcess;
 
     public static GameObject cloneSpaceOne;
     public static GameObject cloneSpaceTwo;
 
     private void Start()
     {
-        WTPoints.score = default(int);
-        WTPoints.hiScore = PlayerPrefs.GetInt("HiScore");
+        DataPoints.score = default(int);
+        DataPoints.hiScore = PlayerPrefs.GetInt("HiScore");
 
-        WTPoints.dimension = true;
+        DataPoints.dimension = true;
 
-        WTPoints.pointsSpaceTwo = default(int);
-        WTPoints.pointsSpaceOne = default(int);
+        DataPoints.pointsSpaceTwo = default(int);
+        DataPoints.pointsSpaceOne = default(int);
         
 
         cloneSpaceTwo = Instantiate(spaceProcess, Vector3.zero, Quaternion.identity);
 
-        WTPoints.space = GameObject.Find("spaceTwo");
-        WTPoints.render = WTPoints.space.GetComponent<SpriteRenderer>();
+        DataPoints.space = GameObject.Find("spaceTwo");
+        DataPoints.render = DataPoints.space.GetComponent<SpriteRenderer>();
     }
 
-    private void Update() => AlphaChannel.RegulateSprite(WTPoints.render, 0.7f);
+    private void Update() => AlphaChannel.RegulateSprite(DataPoints.render, 0.7f);
 
 }
 
@@ -52,7 +52,7 @@ public class AlphaChannel
     }
 }
 
-public static class WTPoints
+public static class DataPoints
 {
     public static int hiScore;
     public static int score;

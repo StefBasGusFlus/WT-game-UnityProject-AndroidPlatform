@@ -7,7 +7,7 @@ public class EatGoal : MonoBehaviour
 
     private void Start()
     {
-        if (WTPoints.dimension)
+        if (DataPoints.dimension)
             pointsText = GameObject.Find("pointsTwo").GetComponent<Text>();
         else
             pointsText = GameObject.Find("pointsOne").GetComponent<Text>();
@@ -17,15 +17,15 @@ public class EatGoal : MonoBehaviour
     {
         if(collision.gameObject.tag == "player")
         {
-            if (WTPoints.dimension)
+            if (DataPoints.dimension)
             {
-                WTPoints.pointsSpaceTwo++;
-                pointsText.text = WTPoints.pointsSpaceTwo.ToString();
+                DataPoints.pointsSpaceTwo++;
+                pointsText.text = DataPoints.pointsSpaceTwo.ToString();
             }
             else
             {
-                WTPoints.pointsSpaceOne++;
-                pointsText.text = WTPoints.pointsSpaceOne.ToString();
+                DataPoints.pointsSpaceOne++;
+                pointsText.text = DataPoints.pointsSpaceOne.ToString();
             }
 
             Destroy(this.gameObject);

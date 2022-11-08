@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class SpawnBarrier : MonoBehaviour
 {
-    public GameObject[] barriersTopOrLeft;
-    public GameObject[] barriersDownOrRight;
+    [SerializeField] private GameObject[] barriersTopOrLeft;
+    [SerializeField] private GameObject[] barriersDownOrRight;
 
-    public GameObject[] portals;
+    [SerializeField] private GameObject[] portals;
 
     private Bounds boundsGameField;
 
@@ -45,23 +45,23 @@ public class SpawnBarrier : MonoBehaviour
     IEnumerator SpawnGenerator()
     {
         yield return new WaitForSeconds(1);
-        GameObject clone = Instantiate(barriersTopOrLeft[Random.Range(0, barriersTopOrLeft.Length)],
-            new Vector3(x - shiftX, y + shiftY, 0),
-            Quaternion.identity);
-        clone.transform.SetParent(this.transform);
+        int randomElement = Random.Range(0, barriersTopOrLeft.Length);
+        Create(barriersTopOrLeft[randomElement], new Vector3(x - shiftX, y + shiftY, 0));
 
         yield return new WaitForSeconds(2);
-        clone = Instantiate(barriersDownOrRight[Random.Range(0, barriersDownOrRight.Length)], 
-            new Vector3(x + shiftX, y - shiftY, 0), 
-            Quaternion.identity);
-        clone.transform.SetParent(this.transform);
+        randomElement = Random.Range(0, barriersDownOrRight.Length);
+        Create(barriersDownOrRight[randomElement], new Vector3(x + shiftX, y - shiftY, 0));
 
         yield return new WaitForSeconds(2.5f);
-        clone = Instantiate(portals[Random.Range(0, portals.Length)], 
-            new Vector3(x, y, 0),
-            Quaternion.identity);
-        clone.transform.SetParent(this.transform);
+        randomElement = Random.Range(0, portals.Length);
+        Create(portals[randomElement], new Vector3(x, y, 0));
 
         Repeat();
+    }
+
+    private void Create(GameObject prefab, Vector3 position)
+    {
+        GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+        clone.transform.SetParent(transform);
     }
 }

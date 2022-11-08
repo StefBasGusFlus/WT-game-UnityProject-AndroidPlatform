@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class RotateElementBackground : MonoBehaviour
 {
-    void Update() => transform.Rotate(new Vector3(0, 0, 40 * Time.deltaTime));
+    [SerializeField] private int _rotateSpeed;
+
+    void Update() => transform.Rotate(new Vector3(0, 0, _rotateSpeed * Time.deltaTime));
 }
