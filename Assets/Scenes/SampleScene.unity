@@ -978,6 +978,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 548817391122302673, guid: 35a4511bb17fea9408932586a8092332, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548817391122302673, guid: 35a4511bb17fea9408932586a8092332, type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 548817391122302673, guid: 35a4511bb17fea9408932586a8092332, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}

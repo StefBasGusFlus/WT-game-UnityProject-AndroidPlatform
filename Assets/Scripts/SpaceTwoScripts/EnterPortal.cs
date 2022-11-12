@@ -20,9 +20,9 @@ public class EnterPortal : MonoBehaviour
                     return;
                 }
 
-                Destroy(StartProcess.cloneSpaceTwo);
+                Destroy(StartProcess.CloneSpaceTwo);
 
-                StartProcess.cloneSpaceOne = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
+                StartProcess.CloneSpaceOne = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
                 DataPoints.space = GameObject.Find("spaceOne");
             }
@@ -34,9 +34,9 @@ public class EnterPortal : MonoBehaviour
                     return;
                 }
 
-                Destroy(StartProcess.cloneSpaceOne);
+                Destroy(StartProcess.CloneSpaceOne);
 
-                StartProcess.cloneSpaceTwo = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
+                StartProcess.CloneSpaceTwo = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
                 DataPoints.space = GameObject.Find("spaceTwo");
             }

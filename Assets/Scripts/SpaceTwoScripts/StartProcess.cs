@@ -5,8 +5,8 @@ public class StartProcess : MonoBehaviour
 {
     [SerializeField] private GameObject spaceProcess;
 
-    public static GameObject cloneSpaceOne;
-    public static GameObject cloneSpaceTwo;
+    public static GameObject CloneSpaceOne;
+    public static GameObject CloneSpaceTwo;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class StartProcess : MonoBehaviour
         DataPoints.pointsSpaceOne = default(int);
         
 
-        cloneSpaceTwo = Instantiate(spaceProcess, Vector3.zero, Quaternion.identity);
+        CloneSpaceTwo = Instantiate(spaceProcess, Vector3.zero, Quaternion.identity);
 
         DataPoints.space = GameObject.Find("spaceTwo");
         DataPoints.render = DataPoints.space.GetComponent<SpriteRenderer>();

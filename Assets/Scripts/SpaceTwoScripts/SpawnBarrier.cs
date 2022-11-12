@@ -8,7 +8,7 @@ public class SpawnBarrier : MonoBehaviour
 
     [SerializeField] private GameObject[] portals;
 
-    private Bounds boundsGameField;
+    public static Bounds boundsGameField;
 
     private float x;
     private float y;

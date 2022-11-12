@@ -9,7 +9,7 @@ public class MovePlayer : MonoBehaviour
 
     private bool isMoveUp = false;
 
-    private float delay = 0.06f;
+    private float delay = 0.08f;
 
     private void FixedUpdate()
     {
@@ -37,14 +37,14 @@ public class MovePlayer : MonoBehaviour
 
     public void OnClick() 
     {
-        Invoke("SwitchedDirection", delay);
+        Invoke(nameof(SwitchedDirection), delay);
         delay = 0;
     }
 
     private void OnTriggerExit2D()
     {
         SwitchedDirection();
-        delay = 0.06f;
+        delay = 0.08f;
     }
 
     private void SwitchedDirection() => isMoveUp = !isMoveUp;
