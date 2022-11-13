@@ -7,60 +7,57 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] private AudioSource musicGoal;
 
-    private bool isMoveUp = false;
-
-    private float delay = 0.08f;
+    private float delay = 0;
 
     private void FixedUpdate()
     {
-        if(DataPoints.dimension)
-            ActionInSpaceTwo();
+        if(DataPoints.Dimension)
+            MoveInCurrentDimension(Vector3.up);
         else
-            ActionInSpaceOne();    
+            MoveInCurrentDimension(Vector3.right);
+
+        if (IsOnBounds())
+        {
+            SwitchedDirection();
+            delay = 0.06f;
+        }
     }
 
-    private void ActionInSpaceTwo()
+    private void Update()
     {
-        if (isMoveUp)
-            transform.position += new Vector3(0, speedPlayer * Time.deltaTime);
-        else
-            transform.position -= new Vector3(0, speedPlayer * Time.deltaTime);
+        delay -= Time.deltaTime;
+        delay = Mathf.Clamp(delay, 0, 0.06f);
     }
 
-    private void ActionInSpaceOne()
+    private bool IsOnBounds()
     {
-        if (isMoveUp)
-            transform.position += new Vector3(speedPlayer * Time.deltaTime, 0);
-        else
-            transform.position -= new Vector3(speedPlayer * Time.deltaTime, 0);
+        return (transform.position.y < SpawnBarrier.BoundsGameField.min.y || transform.position.y > SpawnBarrier.BoundsGameField.max.y) ||
+            (transform.position.x < SpawnBarrier.BoundsGameField.min.x || transform.position.x > SpawnBarrier.BoundsGameField.max.x);
     }
 
-    public void OnClick() 
+    private void MoveInCurrentDimension(Vector3 axisPosition) =>
+        transform.Translate(speedPlayer * Time.fixedDeltaTime * axisPosition);
+
+    public void OnClick()
     {
-        Invoke(nameof(SwitchedDirection), delay);
-        delay = 0;
+        if(delay == 0)
+           SwitchedDirection();
     }
 
-    private void OnTriggerExit2D()
-    {
-        SwitchedDirection();
-        delay = 0.08f;
-    }
-
-    private void SwitchedDirection() => isMoveUp = !isMoveUp;
+    private void SwitchedDirection() => speedPlayer *= -1f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "barrier")
         {
-            if (DataPoints.pointsSpaceOne == DataPoints.pointsSpaceTwo)
+            if (DataPoints.PointsSpaceOne == DataPoints.PointsSpaceTwo)
             {
-                DataPoints.score = DataPoints.pointsSpaceTwo;
+                DataPoints.Score = DataPoints.PointsSpaceTwo;
 
-                if(DataPoints.score > DataPoints.hiScore)
-                    PlayerPrefs.SetInt("HiScore", DataPoints.score);
+                if(DataPoints.Score > DataPoints.HiScore)
+                    PlayerPrefs.SetInt("HiScore", DataPoints.Score);
 
-                PlayerPrefs.SetInt("Score", DataPoints.score);
+                PlayerPrefs.SetInt("Score", DataPoints.Score);
                 SceneManager.LoadScene(3);
                 return;
             }

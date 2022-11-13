@@ -10,11 +10,11 @@ public class EnterPortal : MonoBehaviour
 
         if (collision.tag == "player")
         {
-            DataPoints.dimension = !DataPoints.dimension;
+            DataPoints.Dimension = !DataPoints.Dimension;
 
             if (gameObject.tag == "portalSpaceTwo")
             {
-                if (DataPoints.pointsSpaceTwo < DataPoints.pointsSpaceOne)
+                if (DataPoints.PointsSpaceTwo < DataPoints.PointsSpaceOne)
                 {
                     LoadLoserScene();
                     return;
@@ -24,11 +24,11 @@ public class EnterPortal : MonoBehaviour
 
                 StartProcess.CloneSpaceOne = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
-                DataPoints.space = GameObject.Find("spaceOne");
+                DataPoints.Space = GameObject.Find("spaceOne");
             }
             else if(gameObject.tag == "portalSpaceOne")
             {
-                if (DataPoints.pointsSpaceTwo > DataPoints.pointsSpaceOne)
+                if (DataPoints.PointsSpaceTwo > DataPoints.PointsSpaceOne)
                 {
                     LoadLoserScene();
                     return;
@@ -38,10 +38,10 @@ public class EnterPortal : MonoBehaviour
 
                 StartProcess.CloneSpaceTwo = Instantiate(EnterIn, Vector3.zero, Quaternion.identity);
 
-                DataPoints.space = GameObject.Find("spaceTwo");
+                DataPoints.Space = GameObject.Find("spaceTwo");
             }
 
-            DataPoints.render = DataPoints.space.GetComponent<SpriteRenderer>();
+            DataPoints.Render = DataPoints.Space.GetComponent<SpriteRenderer>();
         }
     }
 

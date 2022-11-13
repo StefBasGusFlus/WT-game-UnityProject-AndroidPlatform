@@ -1034,6 +1034,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 548817391122302679, guid: 35a4511bb17fea9408932586a8092332, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 895216191}
+    - target: {fileID: 548817391122302679, guid: 35a4511bb17fea9408932586a8092332, type: 3}
       propertyPath: musicGoal
       value: 
       objectReference: {fileID: 507086637}

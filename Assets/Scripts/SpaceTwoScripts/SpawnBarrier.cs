@@ -8,7 +8,7 @@ public class SpawnBarrier : MonoBehaviour
 
     [SerializeField] private GameObject[] portals;
 
-    public static Bounds boundsGameField;
+    public static Bounds BoundsGameField;
 
     private float x;
     private float y;
@@ -19,20 +19,20 @@ public class SpawnBarrier : MonoBehaviour
 
     private void Start()
     {
-        boundsGameField = gameObject.GetComponent<BoxCollider2D>().bounds;
+        BoundsGameField = gameObject.GetComponent<BoxCollider2D>().bounds;
 
         if (gameObject.tag == "SpaceTwo")
         {
-            x = boundsGameField.max.x;
-            y = boundsGameField.center.y;
+            x = BoundsGameField.max.x;
+            y = BoundsGameField.center.y;
             shiftY = SHIFT;
             shiftX = 0;
 
         }
         else if (gameObject.tag == "SpaceOne")
         {
-            x = boundsGameField.center.x;
-            y = boundsGameField.max.y;
+            x = BoundsGameField.center.x;
+            y = BoundsGameField.max.y;
             shiftY = 0;
             shiftX = SHIFT;
         }

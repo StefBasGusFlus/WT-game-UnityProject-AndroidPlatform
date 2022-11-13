@@ -10,22 +10,22 @@ public class StartProcess : MonoBehaviour
 
     private void Start()
     {
-        DataPoints.score = default(int);
-        DataPoints.hiScore = PlayerPrefs.GetInt("HiScore");
+        DataPoints.Score = default(int);
+        DataPoints.HiScore = PlayerPrefs.GetInt("HiScore");
 
-        DataPoints.dimension = true;
+        DataPoints.Dimension = true;
 
-        DataPoints.pointsSpaceTwo = default(int);
-        DataPoints.pointsSpaceOne = default(int);
+        DataPoints.PointsSpaceTwo = default(int);
+        DataPoints.PointsSpaceOne = default(int);
         
 
         CloneSpaceTwo = Instantiate(spaceProcess, Vector3.zero, Quaternion.identity);
 
-        DataPoints.space = GameObject.Find("spaceTwo");
-        DataPoints.render = DataPoints.space.GetComponent<SpriteRenderer>();
+        DataPoints.Space = GameObject.Find("spaceTwo");
+        DataPoints.Render = DataPoints.Space.GetComponent<SpriteRenderer>();
     }
 
-    private void Update() => AlphaChannel.RegulateSprite(DataPoints.render, 0.7f);
+    private void Update() => AlphaChannel.RegulateSprite(DataPoints.Render, 0.7f);
 
 }
 
@@ -54,14 +54,14 @@ public class AlphaChannel
 
 public static class DataPoints
 {
-    public static int hiScore;
-    public static int score;
+    public static int HiScore;
+    public static int Score;
 
-    public static int pointsSpaceTwo;
-    public static int pointsSpaceOne;
+    public static int PointsSpaceTwo;
+    public static int PointsSpaceOne;
 
-    public static bool dimension;
+    public static bool Dimension;
 
-    public static GameObject space;
-    public static SpriteRenderer render;
+    public static GameObject Space;
+    public static SpriteRenderer Render;
 }
